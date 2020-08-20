@@ -1,4 +1,4 @@
-FROM openjdk:11-alpine
+FROM openjdk:12-alpine
 
 ADD target/flexiana-backend-0.0.1-SNAPSHOT-standalone.jar /flexiana-backend/app.jar
 
