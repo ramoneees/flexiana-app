@@ -8,3 +8,9 @@
  ::initialize-db
  (fn [_ _]
    db/default-db))
+
+
+(re-frame/reg-event-db
+ :set-word
+ (fn [db [_ key word]]
+   (db/word db key word)))
