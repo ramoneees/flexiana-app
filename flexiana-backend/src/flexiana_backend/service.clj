@@ -3,7 +3,8 @@
             [io.pedestal.http.route :as route]
             [io.pedestal.http.body-params :as body-params]
             [ring.util.response :as ring-resp]
-            [flexiana-backend.scrambles :as s]))
+            [flexiana-backend.scrambles :as s]
+            [clojure.data.json :as json]))
 
 
 (defn home-page
@@ -13,7 +14,8 @@
 (defn scrambles
   [request]
   (let [params (:json-params request)]
-    (ring-resp/response {:scramblable (s/scrambles? params)})))
+    (-> (json/write-str {:scramblable (s/scrambles? params)})
+        (ring-resp/response))))
 
 
 ;; Defines "/" and "/about" routes with their associated :get handlers.
@@ -53,7 +55,7 @@
               ;;
               ;; "http://localhost:8080"
               ;;
-              ::http/allowed-origins ["scheme://host:port"]
+              ::http/allowed-origins ["http://localhost:8280"]
 
               ;; Tune the Secure Headers
               ;; and specifically the Content Security Policy appropriate to your service/application

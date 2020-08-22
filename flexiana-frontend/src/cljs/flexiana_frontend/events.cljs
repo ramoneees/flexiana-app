@@ -16,14 +16,16 @@
    (db/word db key word)))
 
 (re-frame/reg-event-db
- ::success-post-result
+ :success-post-result
  (fn [db [_ result]]
+   (println "sucesso? " result)
    (db/set-result db result)))
 
 
 (re-frame/reg-event-db
- ::success-post-failure
+ :failure-post-result
  (fn [db [_ result]]
+   (println "chega aqui?? " result)
    (db/set-result db result)))
 
 
@@ -35,9 +37,9 @@
          params (hash-map :word1 word1 :word2 word2)]
      {:http-xhrio
       {:uri "http://localhost:8080/scrambles"
-       :method :put
+       :method :post
        :params params
        :format          (ajax/json-request-format)
        :response-format (ajax/json-response-format {:keywords? true})
-       :on-success      [::success-post-result]
-       :on-failure      [::failure-post-result]}})))
+       :on-success      [:success-post-result]
+       :on-failure      [:failure-post-result]}})))

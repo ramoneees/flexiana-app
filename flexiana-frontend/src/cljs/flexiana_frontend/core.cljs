@@ -5,7 +5,7 @@
    [flexiana-frontend.events :as events]
    [flexiana-frontend.views :as views]
    [flexiana-frontend.config :as config]
-   ))
+   [day8.re-frame.http-fx]))
 
 
 (defn dev-setup []

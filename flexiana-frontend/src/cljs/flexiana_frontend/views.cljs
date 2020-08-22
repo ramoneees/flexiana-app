@@ -9,7 +9,7 @@
   [:div
    [:input {:type "text" :value @(re-frame/subscribe [:get-word :word1]) :on-change #(re-frame/dispatch [:set-word :word1 (-> % .-target .-value)])}]
    [:input {:type "text" :value @(re-frame/subscribe [:get-word :word2]) :on-change #(re-frame/dispatch [:set-word :word2 (-> % .-target .-value)])}]
-   [:input {:type "submit" :on-click #(re-frame/dispatch [:scramble?] )}]])
+   [:input {:type "submit" :on-click #(re-frame/dispatch [:scramble?])}]])
 
 (defn main-panel []
   [:div
