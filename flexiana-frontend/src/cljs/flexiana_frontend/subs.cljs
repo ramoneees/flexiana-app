@@ -11,5 +11,11 @@
 
 (re-frame/reg-sub
  :get-word
- (fn [db key]
+ (fn [db [_ key]]
    (db/get-word db key)))
+
+
+(re-frame/reg-sub
+ :get-result
+ (fn [db [_ ]]
+   (db/get-result db)))
