@@ -53,7 +53,7 @@
               ;;
               ;; "http://localhost:8080"
               ;;
-              ;;::http/allowed-origins ["scheme://host:port"]
+              ::http/allowed-origins ["scheme://host:port"]
 
               ;; Tune the Secure Headers
               ;; and specifically the Content Security Policy appropriate to your service/application
@@ -69,7 +69,7 @@
               ;; Either :jetty, :immutant or :tomcat (see comments in project.clj)
               ;;  This can also be your own chain provider/server-fn -- http://pedestal.io/reference/architecture-overview#_chain_provider
               ::http/type :jetty
-              ;;::http/host "localhost"
+              ::http/host "0.0.0.0"
               ::http/port 8080
               ;; Options to pass to the container (Jetty)
               ::http/container-options {:h2c? true

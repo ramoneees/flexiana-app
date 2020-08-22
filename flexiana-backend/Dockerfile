@@ -1,7 +1,9 @@
 FROM openjdk:12-alpine
 
-ADD target/flexiana-backend-0.0.1-SNAPSHOT-standalone.jar /flexiana-backend/app.jar
+WORKDIR /app
+
+COPY   target/backend.jar /app/
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "/flexiana-backend/app.jar"]
+CMD ["java", "-jar", "backend.jar"]
