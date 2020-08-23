@@ -12,6 +12,10 @@
    [:input {:type "submit" :on-click #(re-frame/dispatch [:scramble?])}]])
 
 (defn main-panel []
-  [:div
-   [:h1 "LET'S SCRAMBLE!!!" @(re-frame/subscribe [:get-result])]
-   (scramble-screen)])
+  (let [result (re-frame/subscribe [:get-result])]
+    [:div
+     [:h1 "LET'S SCRAMBLE!!!"]
+     (if @result
+       [:p "tottaly scrambable!!"]
+       [:p "not scrambable at all!!"])
+     (scramble-screen)]))

@@ -17,5 +17,5 @@
 
 (re-frame/reg-sub
  :get-result
- (fn [db [_ ]]
+ (fn [db]
    (db/get-result db)))

@@ -14,7 +14,7 @@
 (defn scrambles
   [request]
   (let [params (:json-params request)]
-    (-> (json/write-str {:scramblable (s/scrambles? params)})
+    (-> (json/write-str {:scrambable (s/scrambles? params)})
         (ring-resp/response))))
 
 
@@ -55,7 +55,7 @@
               ;;
               ;; "http://localhost:8080"
               ;;
-              ::http/allowed-origins ["http://localhost:8280"]
+              ::http/allowed-origins ["http://localhost:8280" "http://localhost"]
 
               ;; Tune the Secure Headers
               ;; and specifically the Content Security Policy appropriate to your service/application

@@ -18,14 +18,12 @@
 (re-frame/reg-event-db
  :success-post-result
  (fn [db [_ result]]
-   (println "sucesso? " result)
    (db/set-result db result)))
 
 
 (re-frame/reg-event-db
  :failure-post-result
  (fn [db [_ result]]
-   (println "chega aqui?? " result)
    (db/set-result db result)))
 
 

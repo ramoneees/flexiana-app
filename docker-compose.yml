@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  frontend:
+    build: ./flexiana-frontend
+    ports: 
+        - 80:80
+  backend:
+    build: ./flexiana-backend
+    ports: 
+        - 8080:8080
