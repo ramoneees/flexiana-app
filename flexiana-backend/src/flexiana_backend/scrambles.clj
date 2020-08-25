@@ -13,7 +13,7 @@
 
 (defn valid-inputs?
   [input1 input2]
-  (and (not-blank? input1) (not-blank? input2)))
+  (and (not-blank? input1) (not-blank? input2) (>= input1 input2)))
 
 (defn scrambles?
   [{:keys [word1 word2]}]
