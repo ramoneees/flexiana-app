@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: clojure:openjdk-16-lein-slim-buster
 
     steps:
     - uses: actions/checkout@v2
