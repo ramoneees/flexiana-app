@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: openjdk-16-lein-slim-buster
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
