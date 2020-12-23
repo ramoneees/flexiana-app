@@ -6,7 +6,7 @@
 (deftest input-validations
   (is
    (=
-    (valid-inputs? "a-string" "another-string")
+    (valid-inputs? "another-string" "a-string")
     true))
   (is
    (=
