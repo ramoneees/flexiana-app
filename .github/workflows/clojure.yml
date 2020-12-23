@@ -9,11 +9,13 @@ on:
 jobs:
   build:
 
-    runs-on: clojure:openjdk-16-lein-slim-buster
+    runs-on: openjdk-16-lein-slim-buster
 
     steps:
     - uses: actions/checkout@v2
     - name: Install dependencies
       run: lein deps
+      working-directory: flexiana-backend
     - name: Run tests
       run: lein test
+      working-directory: flexiana-backend
