@@ -19,3 +19,6 @@ jobs:
     - name: Run tests
       run: lein test
       working-directory: flexiana-backend
+    - name: Build jar
+      run: lein uberjar
+      working-directory: flexiana-backend 
